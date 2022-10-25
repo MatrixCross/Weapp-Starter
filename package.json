@@ -1,0 +1,37 @@
+{
+  "name": "weapp-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "keywords": [],
+  "author": "Wyatex",
+  "license": "ISC",
+  "scripts": {
+    "prepare": "husky install",
+    "unocss": "unocss ./**/*.wxml -c unocss.config.js --watch -o unocss.wxss",
+    "unocss:build": "unocss ./**/*.wxml -c unocss.config.js -o unocss.wxss",
+    "format": "prettier --write ./**/*.{js,wxs,wxml,wxss,json}"
+  },
+  "lint-staged": {
+    "*.{js,wxs,wxml,wxss,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.10.5",
+    "lodash-es": "^4.17.21",
+    "miniprogram-computed": "^4.4.0",
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^2.1.5",
+    "tdesign-miniprogram": "^0.23.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "unocss": "^0.45.30",
+    "unocss-preset-weapp": "^0.1.18"
+  }
+}
