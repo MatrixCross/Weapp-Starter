@@ -17,4 +17,9 @@
 <view class="px-50rpx pb-100rpx">
   <t-button theme="primary" variant="outline" block bind:tap="showdata">show Page data</t-button>
 </view>
+
+<view class="px-50rpx pb-100rpx">
+  <text>{{showdata}}</text>
+</view>
+
 <t-fab icon="arrow-right" bind:click="toLog"></t-fab>

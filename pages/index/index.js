@@ -1,9 +1,10 @@
 import { testBehavior } from './behavior';
 import { behavior as computedBehavior } from 'miniprogram-computed';
+import { testApi } from '../../api/index';
 Page({
   behaviors: [testBehavior, computedBehavior],
   data: {
-    someData: '...',
+    someData: 'string1',
   },
   computed: {
     allSum(data) {
@@ -17,7 +18,9 @@ Page({
     });
   },
 
-  onLoad: function () {},
+  onLoad: async function () {
+    console.log(await testApi({ name: 123 }));
+  },
   onShow() {
     console.log(this.data);
   },

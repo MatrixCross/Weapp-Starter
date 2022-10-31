@@ -1,6 +1,8 @@
 import { observable, action } from 'mobx-miniprogram';
 
 export const user = observable({
+  openid: '',
+  unionid: '',
   numA: 1000,
   numB: 1000,
 
