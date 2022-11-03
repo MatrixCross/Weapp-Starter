@@ -82,7 +82,7 @@ const baseRequest: BaseRequest = function <T, U extends DefaultResponseType<T> =
       requestOption.fail = (err) => {
         resolve({
           isSuccess: true,
-          code: err.errno,
+          code: -1,
           msg: err.errMsg,
           data: undefined,
         } as U);
@@ -94,7 +94,7 @@ const baseRequest: BaseRequest = function <T, U extends DefaultResponseType<T> =
         handler(err);
         resolve({
           isSuccess: true,
-          code: err.errno,
+          code: -1,
           msg: err.errMsg,
           data: undefined,
         } as U);

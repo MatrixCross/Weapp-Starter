@@ -17,6 +17,7 @@
     "strict": true,
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
+    "types": ["wechat-miniprogram"],
     "typeRoots": ["./typings"]
   },
   "include": ["./**/*.ts"],

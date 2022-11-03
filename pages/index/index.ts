@@ -1,6 +1,6 @@
 import { mobxBehavior } from './behavior';
 import { behavior as computedBehavior } from 'miniprogram-computed';
-import { testApi } from '../../api/index';
+import { testApi } from '../../apis/index';
 Page({
   behaviors: [mobxBehavior, computedBehavior],
   data: {
