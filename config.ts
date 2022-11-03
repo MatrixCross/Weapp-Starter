@@ -1,7 +1,7 @@
 export default {
   env: 'dev', // dev | prod
-  // 后端服务地址
-  apiServer: {
+  // 主要的后端服务地址
+  defaultApiServer: {
     dev: 'https://baidu.com',
     prod: 'https://baidu.com',
   },
@@ -10,4 +10,4 @@ export default {
     dev: 60 * 60 * 24 * 30,
     prod: 60 * 60 * 24 * 30,
   },
-};
+} as const;

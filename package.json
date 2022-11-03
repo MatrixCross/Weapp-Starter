@@ -21,19 +21,21 @@
   "dependencies": {
     "@vant/weapp": "^1.10.5",
     "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.6",
     "lodash-es": "^4.17.21",
     "miniprogram-computed": "^4.4.0",
     "mobx-miniprogram": "^4.13.2",
     "mobx-miniprogram-bindings": "^2.1.5",
-    "tdesign-miniprogram": "^0.23.0"
+    "tdesign-miniprogram": "^0.24.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "miniprogram-api-typings": "^3.6.0",
     "prettier": "^2.7.1",
-    "unocss": "^0.45.30",
-    "unocss-preset-weapp": "^0.1.18"
+    "unocss": "^0.46.3",
+    "unocss-preset-weapp": "^0.2.0"
   }
 }

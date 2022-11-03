@@ -18,4 +18,5 @@
 > Unocss用法和Tailwind基本一致，可以查看[Tailwind](https://tailwindcss.com/)官方文档进行使用，
 
 ## TODO
-- [ ] 添加wx.request的封装
+- [x] 添加wx.request的封装
+- [x] TypeScript支持
