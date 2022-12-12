@@ -3,22 +3,19 @@ import config from '../config';
 const DEFAULT_CACHE_TIME = config.storageExpire[config.env];
 
 export const createStorage = ({ prefixKey = '' } = {}) => {
-  const Storage = class {
-    prefixKey = prefixKey;
-
+  return {
+    prefixKey: prefixKey,
     getKey(key: string) {
       return `${this.prefixKey}${key}`.toUpperCase();
-    }
-
-    set(key: string, value: IAnyObject, expire = DEFAULT_CACHE_TIME) {
+    },
+    set(key: string, value: IAnyObject | string | number | boolean, expire = DEFAULT_CACHE_TIME) {
       const stringData = JSON.stringify({
         value,
         expire: expire !== null ? new Date().getTime() + expire * 1000 : null,
       });
       wx.setStorageSync(this.getKey(key), stringData);
-    }
-
-    get(key: string, def = null) {
+    },
+    get<T>(key: string, def = null) {
       const item = wx.getStorageSync(this.getKey(key));
       if (item) {
         try {
@@ -26,7 +23,7 @@ export const createStorage = ({ prefixKey = '' } = {}) => {
           const { value, expire } = data;
           // 在有效期内直接返回
           if (expire === null || expire >= Date.now()) {
-            return value;
+            return value as T;
           }
           this.remove(this.getKey(key));
         } catch (e) {
@@ -34,19 +31,16 @@ export const createStorage = ({ prefixKey = '' } = {}) => {
         }
       }
       return def;
-    }
-
+    },
     remove(key: string) {
       try {
         wx.removeStorageSync(this.getKey(key));
       } catch (e) {}
-    }
-
+    },
     clear() {
       wx.clearStorage();
-    }
+    },
   };
-  return new Storage();
 };
 
 export const storage = createStorage();
