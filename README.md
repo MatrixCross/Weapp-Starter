@@ -10,10 +10,24 @@
 
 项目配置了一个分包示例，可以按需求进行修改。
 
+## 项目结构
+```
+HomLux小程序
+├── .husky // git hooks
+├── apis // 后端接口封装
+├── components // 公用组件
+├── packages // 分包目录
+├── pages // 主包的页面
+├── typings // 类型声明文件
+└── utils // 公用方法
+```
+
 ## 使用方法
 1. 使用`npm i`安装依赖
-2. 在微信开发者工具，点击：工具-构建npm
-3. 开始使用
+2. 运行`npm run unocss`或者`pnpm unocss`监听wxml文件并生成对应wxss
+3. 在微信开发者工具，点击：工具-构建npm
+4. 开始编写代码
+
 
 > Unocss用法和Tailwind基本一致，可以查看[Tailwind](https://tailwindcss.com/)官方文档进行使用，
 
@@ -27,7 +41,3 @@
 ## 注意点
 1. mobx和computed一起使用时，computed的behavior一定要在后面，比如：`behaviors: [testBehavior, computedBehavior]`
 2. mobx配合ts使用会有些小问题，可以看：[解决mobx-miniprogram在TS下的一些小问题](https://wyatex.gitee.io/%E5%89%8D%E7%AB%AF/%E8%A7%A3%E5%86%B3mobx-miniprogram%E5%9C%A8TS%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/)
-
-## TODO
-- [x] 添加wx.request的封装
-- [x] TypeScript支持
