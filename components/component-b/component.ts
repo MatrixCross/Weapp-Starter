@@ -1,5 +1,5 @@
-import { ComponentWithStore } from 'mobx-miniprogram-bindings';
-import { user } from '../../models/index';
+import { ComponentWithStore } from 'mobx-miniprogram-bindings'
+import { user } from '../../models/index'
 ComponentWithStore({
   options: {
     styleIsolation: 'shared',
@@ -13,7 +13,7 @@ ComponentWithStore({
     fields: {
       numA: 'numA',
       numB: (store: typeof user) => {
-        return store.numB;
+        return store.numB
       },
       sum: 'sum',
     },
@@ -22,4 +22,4 @@ ComponentWithStore({
     },
   },
   attached() {},
-});
+})

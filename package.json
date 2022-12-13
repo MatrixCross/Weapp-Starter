@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "unocss": "unocss ./**/*.wxml -c unocss.config.js --watch -o unocss.wxss",
     "unocss:build": "unocss ./**/*.wxml -c unocss.config.js -o unocss.wxss",
-    "format": "prettier --write ./**/*.{js,wxs,wxml,wxss,json}"
+    "format": "prettier --write ./**/*.{js,ts,wxs,wxml,wxss,json}"
   },
   "lint-staged": {
     "*.{js,wxs,wxml,wxss,json}": [

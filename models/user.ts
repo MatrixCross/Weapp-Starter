@@ -1,4 +1,4 @@
-import { observable, runInAction } from 'mobx-miniprogram';
+import { observable, runInAction } from 'mobx-miniprogram'
 
 export const user = observable({
   openid: '',
@@ -7,14 +7,14 @@ export const user = observable({
   numB: 1000,
 
   get sum() {
-    return this.numA + this.numB;
+    return this.numA + this.numB
   },
 
   update_user: function () {
     runInAction(() => {
-      const sum = this.sum;
-      this.numA = this.numB;
-      this.numB = sum;
-    });
+      const sum = this.sum
+      this.numA = this.numB
+      this.numB = sum
+    })
   },
-});
+})

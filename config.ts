@@ -10,4 +10,4 @@ export default {
     dev: 60 * 60 * 24 * 30,
     prod: 60 * 60 * 24 * 30,
   },
-} as const;
+} as const

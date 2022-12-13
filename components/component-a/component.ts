@@ -1,5 +1,5 @@
-import { ComponentWithStore } from 'mobx-miniprogram-bindings';
-import { global } from '../../models/index';
+import { ComponentWithStore } from 'mobx-miniprogram-bindings'
+import { global } from '../../models/index'
 ComponentWithStore({
   options: {
     styleIsolation: 'shared',
@@ -14,4 +14,4 @@ ComponentWithStore({
       buttonTap: 'update',
     },
   },
-});
+})

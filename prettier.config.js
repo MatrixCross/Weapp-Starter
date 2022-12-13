@@ -22,7 +22,7 @@ module.exports = {
   trailingComma: 'all',
 
   // 是否加分号，项目中统一加分号
-  semi: true,
+  semi: false,
 
   // 是否使用tab格式化： 不使用
   useTabs: false,
@@ -42,4 +42,4 @@ module.exports = {
       options: { parser: 'babel' },
     },
   ],
-};
+}

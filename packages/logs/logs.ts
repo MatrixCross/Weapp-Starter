@@ -10,8 +10,8 @@ Page({
         return {
           date: dayjs(new Date(log)).format('YYYY年MM月DD日 HH:mm:ss'),
           timeStamp: log,
-        };
+        }
       }),
-    });
+    })
   },
-});
+})

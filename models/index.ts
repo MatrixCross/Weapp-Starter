@@ -1,5 +1,5 @@
-import { configure } from 'mobx-miniprogram';
-export { global } from './global';
-export { user } from './user';
+import { configure } from 'mobx-miniprogram'
+export { global } from './global'
+export { user } from './user'
 
-configure({ enforceActions: 'observed' });
+configure({ enforceActions: 'observed' })
