@@ -9,9 +9,6 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ecmaFeatures: {
-    modules: true,
-  },
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -26,6 +23,24 @@ module.exports = {
     requirePlugin: true,
     requireMiniProgram: true,
   },
-  // extends: 'eslint:recommended',
+  overrides: [
+    {
+      files: ['*.wxml'],
+      rules: {
+        'wxml/report-wxml-syntax-error': 'error',
+      },
+      plugins: ['wxml'],
+      processor: 'wxml/wxml',
+      parser: '@wxml/parser',
+    },
+    {
+      files: ['*.js', '*.ts'],
+      parser: '@typescript-eslint/parser',
+      extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
+      rules: {
+        '@typescript-eslint/no-empty-function': 'off',
+      },
+    },
+  ],
   rules: {},
 }

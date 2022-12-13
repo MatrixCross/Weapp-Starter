@@ -10,12 +10,17 @@
     "prepare": "husky install",
     "unocss": "unocss ./**/*.wxml -c unocss.config.js --watch -o unocss.wxss",
     "unocss:build": "unocss ./**/*.wxml -c unocss.config.js -o unocss.wxss",
+    "lint": "eslint . --ext .js,.ts,.wxml --fix",
+    "typecheck": "tsc --noEmit --skipLibCheck",
     "format": "prettier --write ./**/*.{js,ts,wxs,wxml,wxss,json}"
   },
   "lint-staged": {
-    "*.{js,wxs,wxml,wxss,json}": [
+    "*.{js,ts,wxs,wxml,wxss,json}": [
       "prettier --write",
       "git add"
+    ],
+    "*.{js,ts,wxml}": [
+      "eslint"
     ]
   },
   "dependencies": {
@@ -31,6 +36,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-wxml": "^0.7.5",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "miniprogram-api-typings": "^3.6.0",

@@ -17,9 +17,9 @@
     "strict": true,
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
-    "types": ["wechat-miniprogram"],
+    "types": ["miniprogram-api-typings"],
     "typeRoots": ["./typings"]
   },
   "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "miniprogram_npm"]
+  "exclude": ["node_modules", "miniprogram_npm", "unocss.config.ts"]
 }

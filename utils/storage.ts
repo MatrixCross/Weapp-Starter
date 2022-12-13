@@ -35,7 +35,9 @@ export const createStorage = ({ prefixKey = '' } = {}) => {
     remove(key: string) {
       try {
         wx.removeStorageSync(this.getKey(key))
-      } catch (e) {}
+      } catch (e) {
+        return
+      }
     },
     clear() {
       wx.clearStorage()
