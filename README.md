@@ -8,29 +8,30 @@
 - [MobX](https://github.com/wechat-miniprogram/mobx-miniprogram-bindings) 官方推荐的全局状态管理库
 - [computed](https://github.com/wechat-miniprogram/computed) 像写 Vue 一样写 computed 和 watch 吧
 - [Vant](https://vant-contrib.gitee.io/vant-weapp) 轻量、可靠的微信小程序组件库
-- SvgIcon 自实现 svg 动态加载组件，使用脚本自动从 iconify 拉取 svg 标签
+- [TDesign](https://tdesign.tencent.com/miniprogram/overview) 腾讯官方组件库，但是还没有发布正式版,API可能会变
+- SvgIcon 自实现 svg 动态加载组件，可使用脚本自动从 iconify 拉取 svg 标签
 
 项目配置了一个分包示例，可以按需求进行修改。
 
 ## 项目结构
 
 ```
-HomLux小程序
+Weapp-Starter
 ├── .husky // git hooks
 ├── build // 一些自动化脚本
 ├── docs // 项目文档
 ├── src // 小程序源码
-    ├── apis // 后端接口封装
-    ├── assets // 资源目录
-          ├── svg // 存放svg文件
-          └── img // 存放图片文件
-    ├── components // 公用组件
-    ├── config // 一些全局公用的配置、数据
-    ├── custom-tab-bar // 自定义tabbar
-    ├── store // 全局状态
-    ├── packages // 分包，如果分包内容比较多，建议按照package-xx拆分
-    ├── pages // 主包的页面
-    └── utils // 公用方法
+     ├── apis // 后端接口封装
+     ├── assets // 资源目录
+           ├── svg // 存放svg文件
+           └── img // 存放图片文件
+     ├── components // 公用组件
+     ├── config // 一些全局公用的配置、数据
+     ├── custom-tab-bar // 自定义tabbar
+     ├── store // 全局状态
+     ├── packages // 分包，如果分包内容比较多，建议按照package-xx 拆分
+     ├── pages // 主包的页面
+     └── utils // 公用方法
 └── typings // 类型声明文件
 ```
 
