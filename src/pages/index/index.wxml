@@ -1,3 +1,7 @@
+<view class="w-100vw flex flex-col items-center">
+  <svg-icon load="{{global.isLoadedSvg}}" name="feat" width="100vw" height="100vw"></svg-icon>
+  <svg-icon load="{{global.isLoadedSvg}}" name="line-md:github-loop" width="50vw" height="50vw"></svg-icon>
+</view>
 <view class="text-50rpx text-center">Page 中：</view>
 <view class="intro">{{global.numA}} + {{global.numB}} = {{global.sum}}</view>
 <view class="intro">

@@ -1,12 +1,12 @@
 import { BehaviorWithStore } from 'mobx-miniprogram-bindings'
-import { global, user } from '../../models/index'
+import { global, user } from '../../store/index'
 
 export const mobxBehavior = BehaviorWithStore({
   storeBindings: [
     {
       namespace: 'global',
       store: global,
-      fields: ['numA', 'numB', 'sum'],
+      fields: ['numA', 'numB', 'sum', 'isLoadedSvg'],
       actions: ['update'],
     },
     {

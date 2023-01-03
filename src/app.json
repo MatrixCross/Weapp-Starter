@@ -6,6 +6,10 @@
       "pages": ["logs/logs"]
     }
   ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "svg-icon": "./components/svg-icon/index"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

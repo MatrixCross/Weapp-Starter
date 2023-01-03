@@ -19,7 +19,11 @@ Page({
   },
 
   onLoad: async function () {
+    console.log(1, this.data)
     console.log(await testApi())
+    setTimeout(() => {
+      console.log(2, this.data)
+    }, 100)
   },
   onShow() {
     console.log(this.data)

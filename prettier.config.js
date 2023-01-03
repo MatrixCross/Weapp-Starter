@@ -31,7 +31,7 @@ module.exports = {
   overrides: [
     {
       files: '*.wxml',
-      options: { parser: 'html' },
+      options: { parser: 'html', printWidth: 999 }, // wxml的某些属性不能像html一样换行
     },
     {
       files: '*.wxss',

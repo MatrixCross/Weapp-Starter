@@ -1,0 +1,16 @@
+/* components/icon/icon.wxss */
+.icon {
+  mask: var(--un-icon) no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask: var(--un-icon) no-repeat;
+  -webkit-mask-size: 100% 100%;
+  background-color: currentColor;
+}
+
+.default-icon {
+  background: var(--un-icon) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background: var(--un-icon) no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-color: transparent;
+}

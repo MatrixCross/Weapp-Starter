@@ -6,7 +6,7 @@ Page({
   },
   onLoad() {
     this.setData({
-      logs: (wx.getStorageSync('logs') || []).map((log) => {
+      logs: (wx.getStorageSync('logs') || []).map((log: string) => {
         return {
           date: dayjs(new Date(log)).format('YYYY年MM月DD日 HH:mm:ss'),
           timeStamp: log,

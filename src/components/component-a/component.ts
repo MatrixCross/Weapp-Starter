@@ -1,5 +1,5 @@
 import { ComponentWithStore } from 'mobx-miniprogram-bindings'
-import { global } from '../../models/index'
+import { global } from '../../store/index'
 ComponentWithStore({
   options: {
     styleIsolation: 'shared',
