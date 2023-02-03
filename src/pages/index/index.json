@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
     "t-fab": "tdesign-miniprogram/fab/fab",

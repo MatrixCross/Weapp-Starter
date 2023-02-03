@@ -53,6 +53,7 @@ Weapp-Starter
 3. 接口调用方式封装在 apis 目录下，可以按照业务区分模块，如果项目比较大有多个后端接口地址，可以归类到不同文件夹进行区分。
 4. 接口通用的请求处理、响应处理、失败处理都封装在 utils/request 目录下，参考`utils/request/defaultRequest.ts`，不通用的数据和逻辑操作通过参数传入。
 5. TS 类型规范，业务相关的类型定义在 typings 目录下，按需使用 namespace 和不同的 d.ts 进行拆分，如果业务复杂，还可以归类到不同文件夹进行区分。
+6. 页面也需要使用Component进行构建，Page不适合复杂的界面，所以统一使用Component就行了。
 
 ## 注意点
 

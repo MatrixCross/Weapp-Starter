@@ -1,17 +1,19 @@
 import dayjs from 'dayjs'
 
-Page({
+Component({
   data: {
     logs: [],
   },
-  onLoad() {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map((log: string) => {
-        return {
-          date: dayjs(new Date(log)).format('YYYY年MM月DD日 HH:mm:ss'),
-          timeStamp: log,
-        }
-      }),
-    })
+  methods: {
+    onLoad() {
+      this.setData({
+        logs: (wx.getStorageSync('logs') || []).map((log: string) => {
+          return {
+            date: dayjs(new Date(log)).format('YYYY年MM月DD日 HH:mm:ss'),
+            timeStamp: log,
+          }
+        }),
+      })
+    },
   },
 })
