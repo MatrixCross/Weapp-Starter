@@ -16,31 +16,39 @@
     "getIconify": "esno build/getIconify json=../src/assets/svg/iconify.json path=./src/assets/svg/iconify.ts"
   },
   "dependencies": {
-    "@vant/weapp": "^1.10.11",
+    "@vant/weapp": "^1.10.12",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.11.7",
     "fast-deep-equal": "^2.0.1",
     "miniprogram-computed": "^4.4.0",
     "mobx-miniprogram": "^4.13.2",
     "mobx-miniprogram-bindings": "^2.1.5",
-    "tdesign-miniprogram": "^0.33.0"
+    "tdesign-miniprogram": "^0.34.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@types/crypto-js": "^4.1.1",
     "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
-    "eslint": "^8.31.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-wxml": "^0.7.5",
     "esno": "^0.16.3",
     "husky": "^8.0.3",
-    "miniprogram-api-typings": "^3.8.1",
-    "prettier": "^2.8.1",
-    "unocss": "^0.48.0",
+    "miniprogram-api-typings": "^3.9.0",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5",
+    "unocss": "^0.49.4",
     "unocss-preset-weapp": "^0.3.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "vite"
+      ]
+    }
   }
 }
