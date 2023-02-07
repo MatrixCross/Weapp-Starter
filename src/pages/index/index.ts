@@ -1,6 +1,7 @@
 import { mobxBehavior } from './behavior'
 import { ComponentWithComputed } from 'miniprogram-computed'
 import { testApi } from '../../apis/index'
+
 ComponentWithComputed({
   behaviors: [mobxBehavior],
   data: {

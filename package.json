@@ -13,7 +13,7 @@
     "lint": "eslint . --ext .js,.ts,.wxml --fix",
     "typecheck": "tsc --noEmit --skipLibCheck",
     "format": "prettier --write ./**/*.{js,ts,wxs,wxml,wxss,json}",
-    "getIconify": "esno build/getIconify json=../src/assets/svg/iconify.json path=./src/assets/svg/iconify.ts"
+    "getIconify": "esno build/getIconify json=./iconify.json path=./src/assets/svg/iconify.ts"
   },
   "dependencies": {
     "@vant/weapp": "^1.10.12",

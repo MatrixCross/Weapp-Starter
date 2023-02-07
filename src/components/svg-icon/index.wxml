@@ -1,3 +1,2 @@
 <!--components/icon/icon.wxml-->
-<view wx:if="{{load}}" class="{{class}}" style="color: {{color}}; width: {{width}}; height: {{height}}; --un-icon: {{iconUrl}}" />
-<view wx:if="{{placeholder && !load}}" style="width: {{width}}; height: {{height}};"></view>
+<view class="{{class}}" style="color: {{color}}; width: {{width}}; height: {{height}}; --un-icon: {{iconUrl}}" />

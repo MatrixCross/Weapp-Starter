@@ -2,7 +2,6 @@ import { observable, runInAction, action } from 'mobx-miniprogram'
 import { delay } from '../utils/index'
 
 export const global = observable({
-  isLoadedSvg: false,
   numA: 1,
   numB: 2,
 
