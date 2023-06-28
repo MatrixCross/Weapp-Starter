@@ -1,11 +1,14 @@
 <view class="w-100vw flex flex-col items-center" bindtap="test">
   <svg-icon name="feat" width="100vw" height="100vw"></svg-icon>
+  <view class="text-50rpx text-center">本地加载icon</view>
   <svg-icon name="line-md:github-loop" width="50vw" height="50vw"></svg-icon>
+  <view class="text-50rpx text-center">请求iconify加载</view>
+  <svg-icon name="line-md:github-loop" online width="50vw" height="50vw"></svg-icon>
 </view>
 <view class="text-50rpx text-center">Page 中：</view>
 <view class="intro">{{global.numA}} + {{global.numB}} = {{global.sum}}</view>
 <view class="intro">
-  <t-button theme="primary" variant="outline" bind:tap="update">update</t-button>
+  <t-button theme="primary" variant="outline" bind:tap="update">异步update</t-button>
 </view>
 
 <view class="intro">{{numA}} + {{numB}} = {{sum}}</view>

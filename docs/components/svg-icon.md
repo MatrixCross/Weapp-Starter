@@ -14,3 +14,6 @@
 | width       | string  | false | 1em    | svg 的宽         |
 | height      | string  | false | 1em    | svg 的高         |
 | placeholder | boolean | false | true   | 不渲染时是否占位 |
+| online      | boolean | false | true   | 是否从远程请求url |
+
+> **远程url地址可以再app.ts里的globalData设置iconApiURL**。

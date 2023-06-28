@@ -1,3 +1,5 @@
+import { storage } from '../../utils/index'
+
 // components/icon/icon.ts
 Component({
   options: {
@@ -28,6 +30,11 @@ Component({
       type: Boolean,
       value: true,
     },
+    // 是否从远程加载
+    online: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   /**
@@ -49,10 +56,34 @@ Component({
    */
   methods: {
     loadSvg() {
-      this.setData({
-        iconUrl: this.getGlobalSvg(this.data.name),
-        class: this.data.color ? 'icon' : 'default-icon',
-      })
+      if (this.data.online) {
+        // 先从缓存读取
+        const iconUrl = storage.get<string>('icon::' + this.data.name)
+        if (iconUrl) {
+          this.setData({
+            iconUrl,
+            class: this.data.color ? 'icon' : 'default-icon',
+          })
+          return
+        }
+        // 缓存不存在，去iconify请求
+        wx.request({
+          url: `${getApp()?.globalData?.iconApiURL}${this.data.name}.svg`,
+          success: (res) => {
+            const iconUrl = this.encodeDataUri(this.encodeSvg(res.data as string))
+            storage.set('icon::' + this.data.name, iconUrl)
+            this.setData({
+              iconUrl,
+              class: this.data.color ? 'icon' : 'default-icon',
+            })
+          },
+        })
+      } else {
+        this.setData({
+          iconUrl: this.getGlobalSvg(this.data.name),
+          class: this.data.color ? 'icon' : 'default-icon',
+        })
+      }
     },
     encodeSvg(svg: string) {
       return svg

@@ -44,7 +44,7 @@ Weapp-Starter
 
 > Unocss 用法和 Tailwind 基本一致，可以查看[Tailwind](https://tailwindcss.com/)官方文档进行使用，微信小程序的 class 不支持写`%`，所以要用`/`来代替，比如 w-50%可以用 w-1/2 表示
 
-> SvgIcon 用法：SvgIcon 组件会从 globalData 读取 svg 标签，然后动态生成 url，并使用 css 渲染。项目在 build/getIconify.ts 实现了读取一个 json 文件里的`iconList`列表，然后生成 js/ts 文件，然后导入到 globalData 即可根据 svg 的名字加载 svg。使用 svg
+> SvgIcon 用法：SvgIcon 组件会从 globalData 读取 svg 标签，然后动态生成 url，并使用 css 渲染。项目在 build/getIconify.ts 实现了读取一个 json 文件里的`iconList`列表，然后生成 js/ts 文件，然后导入到 globalData 即可根据 svg 的名字加载 svg，使用`pnpm getIconify`快速执行下载svg。或者使用online属性，从远程加载，**记得将iconApiURL的url加入到微信开发平台后台设置允许访问的地址里去**。
 
 ## 项目规范
 

@@ -41,7 +41,8 @@
       "outputPath": ""
     },
     "ignoreDevUnusedFiles": false,
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "condition": false
   },
   "srcMiniprogramRoot": "src/",
   "miniprogramRoot": "src/",

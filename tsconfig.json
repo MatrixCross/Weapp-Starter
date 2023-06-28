@@ -17,7 +17,7 @@
     "strict": true,
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
-    "types": ["miniprogram-api-typings", "crypto-js", "node"],
+    "types": ["miniprogram-api-typings", "node"],
     "typeRoots": ["./typings"]
   },
   "include": ["./**/*.ts"],
