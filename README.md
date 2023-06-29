@@ -13,6 +13,15 @@
 
 项目配置了一个分包示例，可以按需求进行修改。
 
+## 创建项目
+
+```bash
+pnpm create matrix-starter
+# 输入项目名、版本号、选择weapp模板
+cd your-project
+pnpm i
+```
+
 ## 项目结构
 
 ```
