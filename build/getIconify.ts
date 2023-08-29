@@ -3,8 +3,8 @@ import fs from 'fs'
 type jsonDefine = {
   iconList: string[]
 }
-let fromPath = '../src/assets/iconify.json' // json读取位置
-let distPath = './src/assets/iconify.ts' // 文件写入路径
+let fromPath = '../iconify.json' // json读取位置
+let distPath = './src/assets/svg/iconify.ts' // 文件写入路径
 process.argv.forEach((argv) => {
   if (argv.split('=')[0] === 'path') {
     distPath = argv.split('=')[1]
@@ -16,7 +16,10 @@ process.argv.forEach((argv) => {
 const json = require(fromPath) as jsonDefine
 
 // 代码模板
-const tepmlate = `// 该文件由脚本自动生成，请勿手动修改
+const tepmlate = `/* eslint-disable */
+/* prettier-ignore */
+// @ts-nocheck
+// 该文件由脚本自动生成，请勿手动修改
 export default {code
 }`
 
@@ -44,7 +47,7 @@ async function genCode() {
   }
   let code = ''
   for (const [name, svg] of Object.entries(iconSvgMap)) {
-    code += `\n'${name}': '${svg}',`
+    code += `\n  '${name}': '${svg}',`
   }
   code = tepmlate.replace('code', code)
   fs.writeFileSync(distPath, code, {
