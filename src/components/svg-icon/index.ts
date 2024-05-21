@@ -30,11 +30,6 @@ Component({
       type: Boolean,
       value: true,
     },
-    // 是否从远程加载
-    online: {
-      type: Boolean,
-      value: false,
-    },
   },
 
   /**
@@ -56,34 +51,27 @@ Component({
    */
   methods: {
     loadSvg() {
-      if (this.data.online) {
-        // 先从缓存读取
-        const iconUrl = storage.get<string>('icon::' + this.data.name)
-        if (iconUrl) {
+      // 先从缓存读取
+      const iconUrl = storage.get<string>('icon::' + this.data.name)
+      if (iconUrl) {
+        this.setData({
+          iconUrl,
+          class: this.data.color ? 'icon' : 'default-icon',
+        })
+        return
+      }
+      // 缓存不存在，去iconify请求
+      wx.request({
+        url: `${getApp()?.globalData?.iconApiURL}${this.data.name}.svg`,
+        success: (res) => {
+          const iconUrl = this.encodeDataUri(this.encodeSvg(res.data as string))
+          storage.set('icon::' + this.data.name, iconUrl, null)
           this.setData({
             iconUrl,
             class: this.data.color ? 'icon' : 'default-icon',
           })
-          return
-        }
-        // 缓存不存在，去iconify请求
-        wx.request({
-          url: `${getApp()?.globalData?.iconApiURL}${this.data.name}.svg`,
-          success: (res) => {
-            const iconUrl = this.encodeDataUri(this.encodeSvg(res.data as string))
-            storage.set('icon::' + this.data.name, iconUrl)
-            this.setData({
-              iconUrl,
-              class: this.data.color ? 'icon' : 'default-icon',
-            })
-          },
-        })
-      } else {
-        this.setData({
-          iconUrl: this.getGlobalSvg(this.data.name),
-          class: this.data.color ? 'icon' : 'default-icon',
-        })
-      }
+        },
+      })
     },
     encodeSvg(svg: string) {
       return svg
@@ -98,14 +86,6 @@ Component({
     },
     encodeDataUri(str: string) {
       return `url("data:image/svg+xml;utf8,${str}")`
-    },
-    getGlobalSvg(name: string) {
-      // 从全局的svgs加载svg数据
-      if (getApp()?.globalData?.svgs[name]) {
-        return this.encodeDataUri(this.encodeSvg(getApp().globalData.svgs[name]))
-      } else {
-        return ''
-      }
     },
   },
 

@@ -1,9 +1,10 @@
 <view class="w-100vw flex flex-col items-center" bindtap="test">
-  <svg-icon name="feat" width="100vw" height="100vw"></svg-icon>
-  <view class="text-50rpx text-center">本地加载icon</view>
-  <svg-icon name="line-md:github-loop" width="50vw" height="50vw"></svg-icon>
+  <view class="text-50rpx text-center">本地加载svg</view>
+  <view class="w-100vw h-100vw i-local-feat"></view>
+  <view class="text-50rpx text-center">本地加载iconify</view>
+  <view class="text-375rpx i-line-md-github-loop"></view>
   <view class="text-50rpx text-center">请求iconify加载</view>
-  <svg-icon name="line-md:github-loop" online width="50vw" height="50vw"></svg-icon>
+  <svg-icon name="line-md:github-loop" width="50vw" height="50vw"></svg-icon>
 </view>
 <view class="text-50rpx text-center">Page 中：</view>
 <view class="intro">{{global.numA}} + {{global.numB}} = {{global.sum}}</view>

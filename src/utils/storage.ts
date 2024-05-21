@@ -8,7 +8,7 @@ export const createStorage = ({ prefixKey = '' } = {}) => {
     getKey(key: string) {
       return `${this.prefixKey}${key}`.toUpperCase()
     },
-    set(key: string, value: IAnyObject | string | number | boolean, expire = DEFAULT_CACHE_TIME) {
+    set(key: string, value: IAnyObject | string | number | boolean, expire: number | null = DEFAULT_CACHE_TIME) {
       const stringData = JSON.stringify({
         value,
         expire: expire !== null ? new Date().getTime() + expire * 1000 : null,
